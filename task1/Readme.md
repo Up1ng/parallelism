@@ -1,10 +1,12 @@
 ## Сборка
-``` для указания типа double запуск:
+Для указания типа double запуск:
+```
 cmake -D USE_DOUBLE=ON
 make
 ./a
 ```
-``` для запуска с float:
+Для запуска с float:
+```
 cmake .
 make
 ./a
