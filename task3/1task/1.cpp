@@ -17,7 +17,6 @@ void parallel_init(std::vector<double>& A, std::vector<double>& b, int N, int th
             }
         });
     }
-    // jthreads join here on destruction of workers — init is complete before we return
 }
 
 double mat_vec_mul(const std::vector<double>& A, const std::vector<double>& b,
@@ -39,7 +38,6 @@ double mat_vec_mul(const std::vector<double>& A, const std::vector<double>& b,
                 }
             });
         }
-    } // workers join here — all threads done before we measure t1
     auto t1 = std::chrono::steady_clock::now();
     return std::chrono::duration<double>(t1 - t0).count();
 }
