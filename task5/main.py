@@ -153,7 +153,7 @@ def process_multi_thread(video_path, output_path, num_threads):
 
 
 def run_benchmark(video_path, output_prefix):
-    """Test multiple thread counts and print a speedup table."""
+    
     cpu_count = multiprocessing.cpu_count()
     counts = sorted({1, 2, 4, 8, cpu_count, cpu_count * 2})
     print(f"\n  CPU logical cores: {cpu_count}")
@@ -218,5 +218,3 @@ def main():
         run_benchmark(args.video, base)
 
 
-if __name__ == "__main__":
-    main()
