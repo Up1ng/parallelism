@@ -1,14 +1,3 @@
-// Task 6: 2D heat equation, 5-point Jacobi iteration, OpenACC.
-// Boundary: corners (10, 20, 30, 20) clockwise from top-left,
-// linear interpolation along edges. Interior initialized to zero.
-//
-// Optimization stages match OpenACC Course 2018, Week 3 (Loop Optimizations):
-//   STAGE 1: plain `parallel loop reduction(max:err)` (slides 8 + 9)
-//   STAGE 2: + collapse(2)                            (slide 32)
-//   STAGE 3: + tile(32,32)  instead of collapse       (slide 36)
-//   STAGE 4: + collapse(2) vector_length(128)         (slide 42)
-// Build a given stage with: nvc++ -DSTAGE=N ...
-
 #include <boost/program_options.hpp>
 #include <chrono>
 #include <cmath>
